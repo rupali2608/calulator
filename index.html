@@ -1,92 +1,99 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <title>my calculator</title>
+    <title>Calculator</title>
     <style>
-        .calculator {
+        h1 {
+            background-color: gray;
+            border: 3px solid white;
+            height: 35px;
+            width: 160px;
             text-align: center;
-            border: 5px solid black;
             margin: auto;
-            height: 380px;
-            width: 500px;
+            margin-top: 100px;
+        }
+
+        .createStyle {
+            border: 3px solid;
+            border-radius: 50px;
             padding: 20px;
-            /* display: flex; */
-            /* padding: 3em 2em 3em 2em; */
+            text-align: center;
+            margin: auto;
+            height: 370px;
+            width: 220px;
+            background-color: white;
+            display: flex;
+            /*rgb(182, 178, 178);*/
         }
 
-        .displaybox {
-            width: 100%;
+        #cal {
+            width: 150px;
+            border: 3px solid black;
+            border-radius: 5px;
             padding: 10px;
-
+            margin: auto;
         }
 
-        input[type=button] {
-            font-family: 'Orbitron', sans-serif;
-            background-color: #64278f;
+        input {
+            width: 50px;
+            background-color: gray;
             color: white;
-            border: solid black 0.5px;
-            width: 10%;
-            border-radius: 2px;
-            height: 7%;
-            outline: none;
+            border: 2px solid gray;
+            border-radius: 15px;
+            padding: 13px;
+            font-size: 15px;
         }
 
-        input:active[type=button] {
-            background: #e5e5e5;
-            -webkit-box-shadow: inset 0px 0px 5px #c1c1c1;
-            -moz-box-shadow: inset 0px 0px 5px #c1c1c1;
-            box-shadow: inset 0px 0px 5px #c1c1c1;
+        #clear {
+            width: 70px;
+            font-size: px;
+            padding: 10px;
+            margin: 1px;
+            background-color: red;
+            border: red;
         }
     </style>
 </head>
 
+<h1>Calculator</h1>
+
 <body>
-    <div class="calculator">
 
-        <input type="text" id="answer" name="calc" class="displaybox">
-        <br>
-        <br>
-        <input type="button" value=1 onclick="display('1')">
-        <input type="button" value="2" onclick="display('2')">
-        <input type="button" value="3" onclick="display('3')">
-        <input type="button" value="+" onclick="display('+')">
-        <br>
-        <br>
-        <input type="button" value="4" onclick="display('4')">
-        <input type="button" value="5" onclick="display('5')">
-        <input type="button" value="6" onclick="display('6')">
-        <input type="button" value="-" onclick="display('-')">
-        <br>
-        <br>
-        <input type="button" value="7" onclick="display('7')">
-        <input type="button" value="8" onclick="display('8')">
-        <input type="button" value="9" onclick="display('9')">
-        <input type="button" value="/" onclick="display('/')">
-        <br>
-        <br>
-        <input type="button" value="." onclick="display('.')">
-        <input type="button" value="0" onclick="display('0')">
-        <input type="button" value="=" onclick="calculate()" id="eval">
-        <input type="button" value="*" onclick="display('*')">
-        <br>
-        <br>
-        <input type="button" id="clear" value="clear" onClick="clearAll()">
+    <div class="createStyle">
+        <form name="form1">
 
+            <input type="text" , id="cal" , name="answer"><br><br>
+            <input type="button" value="7" onclick="form1.answer.value += '7' ">
+            <input type="button" value="8" onclick="form1.answer.value += '8' ">
+            <input type="button" value="9" onclick="form1.answer.value += '9' ">
+            <input type="button" value="=" onclick="form1.answer.value = eval(form1.answer.value) ">
+            <br>
+            <br>
+            <input type="button" value="4" onclick="form1.answer.value += '4' ">
+            <input type="button" value="5" onclick="form1.answer.value += '5' ">
+            <input type="button" value="6" onclick="form1.answer.value += '6' ">
+            <input type="button" value="+" onclick="form1.answer.value += '+' ">
+            <br>
+            <br>
+            <input type="button" value="1" onclick="form1.answer.value += '1' ">
+            <input type="button" value="2" onclick="form1.answer.value += '2' ">
+            <input type="button" value="3" onclick="form1.answer.value += '3' ">
+            <input type="button" value="-" onclick="form1.answer.value += '-' ">
+            <br>
+            <br>
+            <input type="button" value="/" onclick="form1.answer.value += '/' ">
+            <input type="button" value="*" onclick="form1.answer.value += '*' ">
+            <input type="button" value="0" onclick="form1.answer.value += '0' ">
+            <input type="button" value="." onclick="form1.answer.value += '.' ">
+            <br>
+            <br>
+            <input type="button" value="clear" onclick="form1.answer.value =' '" id="clear">
+
+
+        </form>
     </div>
-    <script>
-        function clearAll() {
-            document.getElementById("answer").value = "";
-        }
-        function display(value) {
-            document.getElementById("answer").value += value;
-        }
-        function calculate() {
-            var p = document.getElementById("answer").value;
-            var q = eval(p);
-            document.getElementById("answer").value = q;
-        }
-    </script>
+
 </body>
 
 </html>
